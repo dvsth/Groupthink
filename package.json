@@ -1,0 +1,19 @@
+{
+  "name": "Groupthink",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:dvsth/Groupthink.git",
+  "author": "Dev Seth <dev.seth@duke.edu>",
+  "license": "MIT",
+  "dependencies": {
+    "global": "^4.4.0",
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "start": "parcel -p 1000 src/index.html",
+    "build-prod": "parcel build src/index.html"
+  }
+}
