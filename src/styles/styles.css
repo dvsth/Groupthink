@@ -1,5 +1,7 @@
 html, body {
     margin: 0;
+    height: 100%;
+    width: 100%
 }
 
 p {
@@ -13,4 +15,11 @@ p {
     width: 100vw;
     align-items: center;
     justify-content: center;
+}
+
+.hello {
+    height: 100vh;
+    width: 100vw;
+    color: black;
+    background-color: black;
 }
