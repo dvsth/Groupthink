@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import Draggable from "react-draggable"
+import TextareaAutosize from "react-autosize-textarea";
 
 import "../styles/card.css"
 
 export default class Card extends Component {
-    render() {      
+
+    onChange = (event) => { this.props.onChange(event, this.props.id) };
+
+    render() {
         return (
             <Draggable
-                handle=".card"
+                handle=".title"
                 defaultPosition={{ x: this.props.params.x, y: this.props.params.y }}
                 position={null}
                 grid={[5, 5]}
@@ -15,12 +19,14 @@ export default class Card extends Component {
                 onStart={this.handleStart}
                 onDrag={this.handleDrag}
                 onStop={this.handleStop} >
-                
                 <div className="card">
-                    <h3>{this.props.params.title}</h3>
-                    <p>{this.props.params.text}</p>
+                    <div className="top-bar"></div>
+                    <div className="input-area">
+                        <TextareaAutosize className="title" onChange={this.onChange} value={this.props.params.title} />
+                        <hr />
+                        <TextareaAutosize className="text" value={this.props.params.text} />
+                    </div>
                 </div>
-            </Draggable>
-        );
+            </Draggable>);
     }
 }
