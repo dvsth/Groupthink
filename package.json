@@ -14,7 +14,8 @@
     "react-div-100vh": "^0.3.8",
     "react-dom": "^16.13.1",
     "react-draggable": "^4.4.3",
-    "react-firebaseui": "^4.1.0"
+    "react-firebaseui": "^4.1.0",
+    "react-resize-detector": "^5.0.6"
   },
   "scripts": {
     "clean": "rm dist/bundle.js",

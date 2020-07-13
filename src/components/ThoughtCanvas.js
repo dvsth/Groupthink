@@ -5,14 +5,35 @@ import { update } from "lodash";
 
 export default function ThoughtCanvas() {
 
+    // state is just a Map of index:card params
     const [cards, updateCards] =
         useState(Map([
             [0, { title: "Dev Seth is an amazing guy", text: "Hi my name is Dev", x: 0, y: 0 }],
-            [1, { key: 1, title: "Purab Seth", text: "Hi my name is Purab", x: 500, y: 0 }]
+            [1, { title: "Purab Seth", text: "Hi my name is Purab", x: 500, y: 0 }]
         ]));
 
-    let onChange = (event, id) => {
-        updateCards(cards.set(id, { ...cards.get(id), title: event.target.value }));
+    // needed for when textarea in card is resized
+    // a dummy state that gets fliped to trigger re-render
+    const [forceRender, doForceRender] = useState(false);
+
+    // handles ALL state changes of child cards
+    // title change, text change, resizing, and deleting
+    let onChange = (event, id, property) => {
+
+        // re-render on resize
+        if (event == undefined) {
+            doForceRender(!forceRender);
+        }
+
+        // delete the card with given id
+        else if (property === "close") {
+            updateCards(cards.remove(id))
+        }
+
+        // update the text/title of card with given id
+        else {
+            updateCards(cards.set(id, { ...cards.get(id), [property]: event.target.value }));
+        }
     }
 
     return (
