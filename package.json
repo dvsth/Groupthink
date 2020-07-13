@@ -6,6 +6,8 @@
   "author": "Dev Seth <dev.seth@duke.edu>",
   "license": "MIT",
   "dependencies": {
+    "@ant-design/icons": "^4.2.1",
+    "antd": "^4.4.2",
     "firebase": "^7.16.0",
     "immutable": "^4.0.0-rc.12",
     "parcel-bundler": "^1.12.4",

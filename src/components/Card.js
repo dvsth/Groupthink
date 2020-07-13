@@ -4,6 +4,7 @@ import Draggable from "react-draggable"
 import "../styles/card.css"
 
 import TextArea from "./TextArea"
+import TrashButton from "./Buttons/TrashButton"
 
 export default class Card extends Component {
 
@@ -12,7 +13,10 @@ export default class Card extends Component {
     onTextChange = (event) => { this.props.onChange(event, this.props.id, "text") };
 
     // warning: this kills the card
-    onClick = (event) => { this.props.onChange(event, this.props.id, "close") }
+    onClick = (event) => {
+        this.props.onChange(event, this.props.id, "close");
+        console.log("closed")
+    }
 
     // forces parent to re-render
     onResize = (width, height) => { this.props.onChange(undefined, undefined, undefined) };
@@ -30,16 +34,18 @@ export default class Card extends Component {
                 onStop={this.handleStop}
             >
                 <div className="card">
-                    <div className="top-bar"><button type="button" onClick={this.onClick}>X</button></div>
+                    <div className="top-bar">
+                        <TrashButton click={this.onClick} />
+                    </div>
                     <div className="input-area">
                         <TextArea
-                            onResize={this.resize}
+                            onResize={this.onResize}
                             className="title"
                             onChange={this.onTitleChange}
                             value={this.props.params.title}
                         />
                         <TextArea
-                            onResize={this.resize}
+                            onResize={this.onResize}
                             className="text"
                             onChange={this.onTextChange}
                             value={this.props.params.text}

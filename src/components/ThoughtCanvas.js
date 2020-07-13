@@ -12,18 +12,19 @@ export default function ThoughtCanvas() {
             [1, { title: "Purab Seth", text: "Hi my name is Purab", x: 500, y: 0 }]
         ]));
 
-    // needed for when textarea in card is resized
-    // a dummy state that gets fliped to trigger re-render
-    const [forceRender, doForceRender] = useState(false);
-
     // handles ALL state changes of child cards
-    // title change, text change, resizing, and deleting
+    // title change, text change, resizing, and adding, deleting
     let onChange = (event, id, property) => {
 
         // re-render on resize
-        if (event == undefined) {
-            doForceRender(!forceRender);
+        if (property === "resize") {
+            updateCards(cards.set(id, { ...cards.get(id), x: event.x, y: event.y }));
         }
+
+        // add a new card
+        // else if (property === "add"){
+        //     updateCards(cards.set(cards.size, {title:}))
+        // }
 
         // delete the card with given id
         else if (property === "close") {
