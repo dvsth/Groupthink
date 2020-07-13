@@ -1,5 +1,7 @@
 .menu-bar {
     z-index: 10000;
+    min-height: 30px;
     height: 30px;
-    width: 100%;
+    max-height: 30px;
+    background-color: black;
 }

@@ -1,0 +1,15 @@
+body, html {
+    margin: 0;
+}
+
+.thought {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-content: stretch;
+    height: 100vh;
+}
+
+.card-area {
+    height: calc(100% - 30px);
+}

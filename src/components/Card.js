@@ -45,13 +45,14 @@ export default class Card extends Component {
                 handle=".top-bar"
                 defaultPosition={{ x: this.props.params.x, y: this.props.params.y }}
                 position={this.cardPosition}
+                bounds=".card-area"
                 grid={[5, 5]}
                 scale={1}
                 onStart={undefined}
                 onDrag={this.handleDrag}
                 onStop={this.handleStop}
             >
-                <div className="card" width={this.props.params.width}>
+                <div className="card" width={this.props.params.width} style={{ zIndex: this.props.params.zIndex }}>
                     <div className="top-bar">
                         <TrashButton click={this.onClick} />
                     </div>
