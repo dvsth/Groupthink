@@ -3,7 +3,6 @@ import { Button } from "antd";
 import { DeleteOutlined } from "@ant-design/icons"
 
 export default function TrashButton(props) {
-    console.log(props)
     return (
         <Button
             type="primary"
