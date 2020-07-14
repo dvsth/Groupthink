@@ -30,13 +30,15 @@ export default class Card extends Component {
     // store new position locally while being dragged
     handleDrag = (e, d) => {
         this.cardPosition = { x: d.x, y: d.y };
-        console.log(e, d)
-        console.log(this.cardPosition)
     }
 
     // float new position to parent when drag stops
     handleStop = (e, d) => {
         this.props.onUpdate(this.props.id, this.cardPosition);
+    }
+
+    handleFocus = (e) => {
+        this.props.onFocus(this.props.id);
     }
 
     render() {
@@ -45,14 +47,14 @@ export default class Card extends Component {
                 handle=".top-bar"
                 defaultPosition={{ x: this.props.params.x, y: this.props.params.y }}
                 position={this.cardPosition}
-                bounds=".card-area"
+                bounds="parent"
                 grid={[5, 5]}
                 scale={1}
                 onStart={undefined}
                 onDrag={this.handleDrag}
                 onStop={this.handleStop}
             >
-                <div className="card" width={this.props.params.width} style={{ zIndex: this.props.params.zIndex }}>
+                <div className="card" onFocus={this.handleFocus} width={this.props.params.width} style={{ zIndex: this.props.params.z }}>
                     <div className="top-bar">
                         <TrashButton click={this.onClick} />
                     </div>
@@ -62,12 +64,14 @@ export default class Card extends Component {
                             className="title"
                             onChange={this.onTitleChange}
                             value={this.props.params.title}
+                            placeholder="Title"
                         />
                         <TextArea
                             onResize={this.onResize}
                             className="text"
                             onChange={this.onTextChange}
                             value={this.props.params.text}
+                            placeholder="compose a note..."
                         />
                     </div>
                 </div>

@@ -11,5 +11,10 @@ body, html {
 }
 
 .card-area {
-    height: calc(100% - 30px);
+    height: calc(100% - 60px);
+}
+
+.spacer {
+    height: 30px;
+    width: 100%;
 }

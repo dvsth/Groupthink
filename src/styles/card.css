@@ -17,8 +17,8 @@
     overflow-x: hidden;
     resize: both;
 
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    /* border-top-left-radius: 15px;
+    border-top-right-radius: 15px; */
 }
 
 .top-bar {
@@ -30,15 +30,6 @@
     width: 100%;
     background-color: rgb(87, 87, 87);
     cursor: grab;
-}
-
-button {
-    background-color: transparent;
-    color: white;
-    margin-right: 10px;
-    height: 15px;
-    border: 0px solid black;
-    margin-top: 7px;
 }
 
 .title {

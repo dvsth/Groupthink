@@ -1,7 +1,10 @@
 .menu-bar {
+    display: flex;
     z-index: 10000;
-    min-height: 30px;
-    height: 30px;
-    max-height: 30px;
+    min-height: 40px;
+    height: 40px;
+    max-height: 40px;
     background-color: black;
+    align-items: center;
+    justify-content: center;
 }
