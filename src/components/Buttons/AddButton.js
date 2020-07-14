@@ -5,21 +5,22 @@ import { PlusOutlined } from "@ant-design/icons"
 export default function AddButton(props) {
 
     const styles = {
-        backgroundColor: 'white',
-        color: 'blue',
+        backgroundColor: 'transparent',
+        color: 'whitesmoke',
         borderWidth: 0,
-        fontSize: '24px'
+        fontSize: '20px'
     }
 
     return (
         <Button
             type="primary"
             shape="circle"
-            value="Add Node"
             icon={<PlusOutlined />}
             onClick={props.click}
             style={styles}
-        />
+        >
+            Add Node
+        </Button>
     )
 }
 

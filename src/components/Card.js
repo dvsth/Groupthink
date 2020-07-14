@@ -47,7 +47,7 @@ export default class Card extends Component {
                 handle=".top-bar"
                 defaultPosition={{ x: this.props.params.x, y: this.props.params.y }}
                 position={this.cardPosition}
-                bounds="parent"
+                bounds={{top: 0}}
                 grid={[5, 5]}
                 scale={1}
                 onStart={undefined}

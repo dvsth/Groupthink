@@ -1,10 +1,15 @@
 .menu-bar {
     display: flex;
+    flex-direction: row;
     z-index: 10000;
     min-height: 40px;
     height: 40px;
     max-height: 40px;
-    background-color: black;
+    background-color: #1b6ca8;
     align-items: center;
     justify-content: center;
+}
+
+.title {
+    font-family: 'B612 Mono', monospace;
 }

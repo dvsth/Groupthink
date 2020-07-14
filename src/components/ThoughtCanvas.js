@@ -27,10 +27,11 @@ export default function ThoughtCanvas() {
 
         // add a new card
         else if (property === "add") {
+            var topCardPosition = (cards.size == 0) ? { x: 100, y: 100 } : cards.get(cards.size).position;
             updateCards(cards.set(cards.size + 1,
                 {
                     title: undefined, text: undefined,
-                    position: { x: window.innerHeight / 2, y: window.innerHeight / 2 },
+                    position: { x: topCardPosition.x + 30, y: topCardPosition.y + 30 },
                     z: cards.size + 1
                 }))
         }

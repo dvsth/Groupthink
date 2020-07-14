@@ -9,7 +9,13 @@ export default function MenuBar(props) {
 
     return (
         <div className="menu-bar" >
-            <AddButton click={ add } />
+            <div className="share-buttons"></div>
+            <div className="site-title">
+                <p>groupthink</p>
+            </div>
+            <div className="think-buttons">
+                <AddButton click={add} />
+            </div>
         </div>
     );
 
