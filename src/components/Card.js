@@ -50,7 +50,7 @@ export default class Card extends Component {
                 bounds={{top: 0}}
                 grid={[5, 5]}
                 scale={1}
-                onStart={undefined}
+                onStart={this.handleFocus}
                 onDrag={this.handleDrag}
                 onStop={this.handleStop}
             >
@@ -65,6 +65,7 @@ export default class Card extends Component {
                             onChange={this.onTitleChange}
                             value={this.props.params.title}
                             placeholder="Title"
+                            spellcheck="false"
                         />
                         <TextArea
                             onResize={this.onResize}
@@ -72,6 +73,7 @@ export default class Card extends Component {
                             onChange={this.onTextChange}
                             value={this.props.params.text}
                             placeholder="compose a note..."
+                            spellcheck="false"
                         />
                     </div>
                 </div>

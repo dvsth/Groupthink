@@ -6,7 +6,7 @@ export default function AddButton(props) {
 
     const styles = {
         backgroundColor: 'transparent',
-        color: 'whitesmoke',
+        color: 'black',
         borderWidth: 0,
         fontSize: '20px'
     }

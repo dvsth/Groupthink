@@ -12,8 +12,10 @@ export default function ThoughtCanvas() {
     // state is just a Map of index:card params
     const [cards, updateCards] =
         useState(Map([
-            [1, { title: "Dev Seth is an amazing guy", text: "Hi my name is Dev", position: { x: 0, y: 0 }, z: 1 }],
-            [2, { title: "Purab Seth", text: "Hi my name is Purab", position: { x: 30, y: 30 }, z: 2 }]
+            [1, { title: "If on a winter's night a traveller...", 
+            text: "If on a Winter’s Night a Traveler, avant-garde novel by Italo Calvino, published in 1979 as Se una notte d’inverno un viaggiatore. Using shifting structures, a succession of tales, and different points of view, the book probes the nature of change, coincidence, and chance and the interdependence of fiction and reality.", 
+            position: { x: 0, y: 0 }, z: 1 }],
+            [2, { title: "Robert Frost", text: "Robert Lee Frost (March 26, 1874 – January 29, 1963) was an American poet. His work was initially published in England before it was published in America.", position: { x: 30, y: 30 }, z: 2 }]
         ]));
 
     // handles ALL state changes of child cards
