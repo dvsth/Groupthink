@@ -65,7 +65,7 @@ export default class Card extends Component {
                             onChange={this.onTitleChange}
                             value={this.props.params.title}
                             placeholder="Title"
-                            spellcheck="false"
+                            spellCheck="false"
                         />
                         <TextArea
                             onResize={this.onResize}
@@ -73,7 +73,7 @@ export default class Card extends Component {
                             onChange={this.onTextChange}
                             value={this.props.params.text}
                             placeholder="compose a note..."
-                            spellcheck="false"
+                            spellCheck="false"
                         />
                     </div>
                 </div>

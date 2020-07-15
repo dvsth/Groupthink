@@ -1,24 +1,18 @@
 .card {
     position: absolute;
-
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
     border: 0px solid black;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     width: 200px;
     min-width: 200px;
     max-width: 500px;
-
     height: 175px;
     min-height: 100px;
     max-height: 400px;
     scroll-behavior: smooth;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
     resize: both;
-
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
     border-radius: 4px;
 }
 
@@ -30,24 +24,22 @@
     max-height: 30px;
     width: 100%;
     /* background-color: #1b6ca8; */
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     cursor: grab;
 }
 
 .title {
     margin-bottom: 0px;
     margin-top: 0px;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     width: calc(100% - 20px);
     border-width: 0px;
     border-image-width: 0px;
     padding-left: 10px;
     padding-right: 10px;
-
     font-size: 15px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
-    
     height: fit-content;
     resize: none;
 }
@@ -61,16 +53,15 @@
     border-width: 0px;
     resize: none;
     font-size: 14px;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     color: black;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-/* 
+
 .input-area {
-    box-sizing: border-box;
-    width: 100%;
-    height: calc(100%);
-} */
+    overflow-y: auto;
+    height: calc(100% - 30px);
+}
 
 hr {
     width: calc(100% - 20px);
@@ -81,4 +72,28 @@ hr {
     margin-top: 0;
 }
 
-/* rgb(248, 240, 229) */
+.input-area::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+.input-area::-webkit-scrollbar-track {
+    background: whitesmoke;
+    /* color of the tracking area */
+}
+
+.input-area::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid whitesmoke;
+    /* creates padding around scroll thumb */
+}
+
+.input-area {
+    scrollbar-width: thin;
+    /* "auto" or "thin"  */
+    scrollbar-color: rgba(0, 0, 0, 0.5) whitesmoke;
+    /* scroll thumb & track */
+}

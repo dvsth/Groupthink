@@ -16,6 +16,7 @@ export default function MenuBar(props) {
                 <p>groupthink</p>
             </div>
             <div className="share-buttons">
+                <p>Welcome, {props.userName}</p>
             </div>
         </div>
     );
